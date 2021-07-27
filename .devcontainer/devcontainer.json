@@ -1,0 +1,22 @@
+{
+    // Your Docker containers will be prefixed with the following
+    "name": "end_to_end_machine_learning",
+    // Path that the Docker build should be run from relative to devcontainer.json.
+    // In other words, your Dockerfile is one level up from the .devcontainer folder.
+    "context": "..",
+    // Use either the Dockerfile or docker-compose.yml to create the Docker container
+    // "dockerFile": "Dockerfile",
+    "dockerComposeFile": "docker-compose.yml",
+    // Required if using dockerComposeFile. The name of the service VS Code should connect to once running.
+    // The 'service' property is the name of the service for the container that VS Code should
+    // use. Update this value and .devcontainer/docker-compose.yml to the real service name.
+    "service": "dev_container",
+    // The optional 'workspaceFolder' property is the path VS Code should open by default when
+    // connected. This is typically a file mount in .devcontainer/docker-compose.yml
+    "workspaceFolder": "/workspace",
+    // VS Code extensions we'll be using
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+    ],
+}

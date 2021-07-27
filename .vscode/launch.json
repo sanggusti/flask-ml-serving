@@ -1,0 +1,62 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // Debug with Flask
+        {
+            "name": "flask run --no-debugger --no-reload",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "wsgi:app",
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "0"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload",
+            ],
+            "jinja": true,
+            "justMyCode": false
+        },
+        // Regular Python file debugger to run the current file
+        {
+            "name": "Python Run Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "jinja": true,
+            "justMyCode": false
+        },
+        // Pytest all files
+        {
+            "name": "Pytest All Files",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "args": [
+                "/workspace/app/tests/",
+                // "-v",
+                // "--lf",
+                "--durations=0",
+            ],
+        },
+        // Pytest run the current file only
+        {
+            "name": "Pytest Run Current File",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "args": [
+                "${file}",
+                // "-v",
+                // "--lf",
+                "--durations=0",
+            ],
+        },
+    ]
+}
