@@ -12,7 +12,7 @@ services:
         target: /var/lib/postgresql/data # the location in the container where the data is stored
         read_only: false
     ports:
-      - 0.0.0.0:5432:5432
+      - 0.0.0.0:5432:5433
     networks:
       - timescale_network
 
